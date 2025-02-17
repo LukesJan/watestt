@@ -20,24 +20,27 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # 4) Build projektu
+      # 4) Spuštění testů
+      - name: Run tests
+        run: npm test
+
+      # 5) Build projektu
       - name: Build
         run: npm run build
 
-      # 5) Nastavení GitHub Pages
+      # 6) Nastavení GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      # 6) Výsledek uploadneme
+      # 7) Výsledek uploadneme
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Cesta, kde se po buildu vytvoří výsledný projekt
-
           path: ./dist
   deploy:
     permissions:
-      contents:  read
+      contents: read
       pages: write
       id-token: write
     environment:
