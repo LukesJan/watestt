@@ -23,7 +23,7 @@ export default function AgeCalculator() {
                 Zadej rok narození:
                 <input type="number" value={birthYear} onChange={handleChange} />
             </label>
-            {age !== null && <p>Tvůj věk je: {age}</p>}
+            {age !== null && <p>Váš věk je: {age}</p>}
         </div>
     );
 }
