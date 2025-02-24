@@ -9,6 +9,7 @@ const PasswordStrength: React.FC<PasswordStrengthProps> = ({ password }) => {
     const uppercaseCriteria = /[A-Z]/.test(password);
     const numberCriteria = /\d/.test(password);
     const specialCharCriteria = /[!@#$%^&*]/.test(password);
+    const specialAll = /[a-z][A-Z]\d[!@#$%^&*]/.test(password);
 
     let strength = 'Slabé';
     let strengthColor = 'red';
@@ -19,8 +20,10 @@ const PasswordStrength: React.FC<PasswordStrengthProps> = ({ password }) => {
     } else if (lengthCriteria && (uppercaseCriteria || numberCriteria || specialCharCriteria)) {
         strength = 'Střední';
         strengthColor = 'yellow';
-    }
-
+    } else if (specialAll) {
+    strength = 'Masivní';
+    strengthColor = 'blue';
+}
     return (
         <div>
             <div style={{ backgroundColor: strengthColor, height: '10px', width: '100%', marginBottom: '10px' }} />
