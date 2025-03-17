@@ -15,20 +15,20 @@ const CountryFlagValidator: React.FC<CountryFlagValidatorProps> = ({ password })
     useEffect(() => {
         const country = countries[Math.floor(Math.random() * countries.length)];
         setSelectedCountry(country);
-        setFlagUrl(`countryflagsapi.netlify.app/flag/${country.toLowerCase()}.svg`);
+        setFlagUrl(`https://countryflagsapi.netlify.app/flag/${country.toLowerCase()}.svg`);
     }, []);
 
     const isValid = password ? password.toUpperCase().includes(selectedCountry) : false;
 
     return (
         <div style={{ textAlign: "center", padding: "20px" }}>
-            <h3>Validátor hesla</h3>
+
             {flagUrl && <img src={flagUrl} alt={`Vlajka ${selectedCountry}`} width={100} height={60} />}
-            <p>Heslo musí obsahovat zkratku země: <strong>{selectedCountry}</strong></p>
+
             {isValid ? (
                 <p style={{ color: "green" }}>Heslo obsahuje zkratku země!</p>
             ) : (
-                <p style={{ color: "red" }}>Heslo neobsahuje zkratku země: {selectedCountry}</p>
+                <p style={{ color: "red" }}>Heslo neobsahuje zkratku země!</p>
             )}
         </div>
     );
