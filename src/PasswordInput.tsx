@@ -6,7 +6,7 @@ interface PasswordInputProps {
 }
 
 
-const PasswordInput: React.FC<PasswordInputProps> = ({passwordValue,setter}: PasswordInputProps) => {
+const PasswordInput: React.FC<PasswordInputProps> = ({passwordValue, setter}: PasswordInputProps) => {
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setter(event.target.value)
     }
@@ -18,4 +18,4 @@ const PasswordInput: React.FC<PasswordInputProps> = ({passwordValue,setter}: Pas
     )
 }
 
-export  default PasswordInput;
+export default PasswordInput;

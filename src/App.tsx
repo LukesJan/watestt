@@ -1,4 +1,3 @@
-
 import {useEffect, useState} from 'react'
 import './App.css'
 import PasswordInput2 from "./PasswordInput.tsx";
@@ -10,12 +9,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import CountryFlagValidator from "./CountryFlagValidator.tsx";
 
 
-
-
 function App() {
     const [password, setPassword] = useState<string | null>(null);
     const [passwordTime, setPasswordTime] = useState<number>(Date.now());
-
 
 
     useEffect(() => {
@@ -25,11 +21,10 @@ function App() {
     }, [password]);
 
 
-
     return (
         <>
             <h1>Password validator</h1>
-            <PasswordInput2 passwordValue={password} setter={setPassword} />
+            <PasswordInput2 passwordValue={password} setter={setPassword}/>
             <PasswordStrength password={password}/>
             <CharacterSequenceValidator password={password}/>
             <PasswordTimeValidator password={password} time={passwordTime}/>
