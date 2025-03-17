@@ -18,6 +18,7 @@ const PasswordStrength: React.FC<PasswordStrengthProps> = ({password}: PasswordS
     if (password.search("[!@#$%^&*]") === -1) {errorArray.push('Heslo neobsahuje alespon 1 specialni znak')}
     if (password.search(/[😀-🙏]/u) === -1) {errorArray.push('Heslo neobsahuje emoji')}
 
+
     return (
         <div className="alert alert-warning mt-2">
             {errorArray.length === 0 ? (
