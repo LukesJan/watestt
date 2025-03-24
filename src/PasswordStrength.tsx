@@ -9,8 +9,9 @@ interface PasswordStrengthProps {
 export const evaluatePassword = (password: string | null): { strength: string; errors: string[] } => {
     const errorArray: string[] = [];
 
-    if (!password) {
-        return { strength: "Slabé", errors: ["Napiš něco"] };
+   if (!password) {
+        return { strength: "Slabé", errors: ["Není nic zadáno, napište něco"] };
+
     }
 
     if (password.length < 8) errorArray.push("Heslo je příliš krátké");
@@ -41,25 +42,23 @@ const PasswordStrength: React.FC<PasswordStrengthProps> = ({ password }) => {
     }, [passwordStrength]);
 
     return (
-        <div className="alert alert-warning mt-2">
-            {errors.length === 0 ? (
-                <p className="text-success">Heslo je silné</p>
-            ) : (
+        <div >
+            {
                 errors.map((error, index) => (
                     <p className="text-danger" key={index}>
                         {error}
                     </p>
-                ))
+                )
             )}
             <p className="text-dark">Síla hesla: {passwordStrength}</p>
             {passwordStrength === "Slabé" && (
-                <button className="btn btn-danger mt-3"></button>
+                <button className="btn btn-danger mt-3" style={{ width: "200px" }}></button>
             )}
             {passwordStrength === "Střední" && (
-                <button className="btn btn-warning mt-3"></button>
+                <button className="btn btn-warning mt-3" style={{ width: "200px" }}></button>
             )}
             {passwordStrength === "Silné" && (
-                <button className="btn btn-success mt-3"></button>
+                <button className="btn btn-success mt-3" style={{ width: "200px" }}></button>
             )}
         </div>
     );

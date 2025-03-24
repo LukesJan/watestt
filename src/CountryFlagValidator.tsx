@@ -25,7 +25,7 @@ const CountryFlagValidator: React.FC<CountryFlagValidatorProps> = ({password}: C
     return (
         <>
             <p className="text-dark">Zadejte zkratku této země:</p>
-            <img src={url} width="500" height="300" ></img>
+            <img src={url} width="500" height="300" style={{marginBottom: "16px"}}></img>
         </>
     )
 }

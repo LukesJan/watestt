@@ -39,15 +39,13 @@ function App() {
 
     return (
         <>
-            <h1 className="mb-5 text-light">Password validator</h1>
+            <h1 className="mb-5 text-dark">Password validator</h1>
             <PasswordInput passwordValue={password} setter={handlePasswordChange} />
             <PasswordStrength password={password} />
             <CharacterSequenceValidator password={password} />
             {passwordTime !== null && <PasswordTimeValidator password={password} time={passwordTime} />}
             <CountryFlagValidator password={password} />
-            <div className="fixed-bottom">
-                <CurrentTemperature />
-            </div>
+            <CurrentTemperature />
         </>
     );
 }
