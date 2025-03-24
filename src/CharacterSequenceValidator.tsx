@@ -9,7 +9,7 @@ const CharacterSequenceValidator: React.FC<CharacterSequenceValidatorProps> = ({
     const errorArray: Array<string> = [];
     if (password === null) {return (<p></p>)}
     if (password.search(/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d])(?=.*[😀-🙏]).{5,}/u) === -1) {
-        errorArray.push("Heslo musi obsahovat VELKE, male pismeno, cislici, specialni znak a emoji")
+        errorArray.push("Heslo musi obsahovat velke, male pismeno, cislici, specialni znak a emoji")
     }
 
     return (
