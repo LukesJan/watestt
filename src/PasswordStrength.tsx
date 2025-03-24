@@ -52,6 +52,15 @@ const PasswordStrength: React.FC<PasswordStrengthProps> = ({ password }) => {
                 ))
             )}
             <p className="text-dark">Síla hesla: {passwordStrength}</p>
+            {passwordStrength === "Slabé" && (
+                <button className="btn btn-danger mt-3"></button>
+            )}
+            {passwordStrength === "Střední" && (
+                <button className="btn btn-warning mt-3"></button>
+            )}
+            {passwordStrength === "Silné" && (
+                <button className="btn btn-success mt-3"></button>
+            )}
         </div>
     );
 };
