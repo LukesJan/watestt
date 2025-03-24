@@ -16,7 +16,7 @@ const CharacterSequenceValidator: React.FC<CharacterSequenceValidatorProps> = ({
         <>
             {
                 errorArray.map((value, index) => {
-                    return <p className="text-light" key={index}>{value}</p>
+                    return <p className="text-dark" key={index}>{value}</p>
                 })
             }
         </>
